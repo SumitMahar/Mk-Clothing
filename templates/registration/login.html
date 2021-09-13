@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!-- Page title -->
+{% block title %}Log in{% endblock title %}
+
+<!-- Content block (Log in) -->
+{% block content %}
+<div class="row align-items-center">
+    <div class="col">
+    </div>
+    <div class="card card-body shadow m-5" style='max-width: 320px;'>
+        <img src="{% static 'img/mk_clothing.svg' %}" class="img-fluid " alt="">
+
+        <h2>Admin Dashboard</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button class="btn btn-success my-1" type="submit">Log in</button>
+        </form>
+    </div>
+    <div class="col">
+    </div>
+</div>
+{% endblock %}
